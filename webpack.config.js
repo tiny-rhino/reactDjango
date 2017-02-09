@@ -1,14 +1,14 @@
 const webpack = require('webpack'),
 	path = require('path'),
+	glob = require('glob'),
 	BundleTracker = require('webpack-bundle-tracker'),
-	ExtractTextPlugin = require('extract-text-webpack-plugin'),
-	utils = require('./build/utils')
+	ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 	
 	context: __dirname,
 
-	entry: utils.compileEntry('./build/src/*/!(_)*.*'),
+	entry: glob.sync('./build/src/*/!(_)*.*'),
 
 	output: {
 		path: path.join(__dirname, 'rhinorun/static'),
@@ -37,7 +37,7 @@ module.exports = {
 
 	plugins: [
 		new BundleTracker({filename: './webpack-stats.json'}),
-		new ExtractTextPlugin('[name].css')
+		new ExtractTextPlugin('[name]-[hash].css')
 	],
 
 	resolve: {

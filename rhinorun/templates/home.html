@@ -2,8 +2,10 @@
 {% load render_bundle from webpack_loader %}
 
 {% block head %}
+    {% render_bundle 'main' 'css' %}
 {% endblock %}
 
 {% block content %}
-    Hello rhino 
+    <h1>Hello rhino</h1> 
+{% render_bundle 'main' 'js' %}
 {% endblock %}
