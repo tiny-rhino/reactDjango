@@ -4,7 +4,7 @@ const webpack = require('webpack'),
 	BundleTracker = require('webpack-bundle-tracker'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = {
+module.exports = { 
 	
 	context: __dirname,
 
@@ -29,8 +29,8 @@ module.exports = {
 		{
 			test: /\.scss$/,
 			use: ExtractTextPlugin.extract({
-				fallbackLoader: 'style-loader',
-				loader: 'css-loader!sass-loader'
+				fallback: 'style-loader',
+				use: ['css-loader', 'sass-loader']
 			})
 		},
 		],
