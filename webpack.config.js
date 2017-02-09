@@ -8,6 +8,7 @@ module.exports = {
 	
 	context: __dirname,
 
+	// create an array with paths to build files excluding files beginning with '_'
 	entry: glob.sync('./build/src/*/!(_)*.*'),
 
 	output: {
