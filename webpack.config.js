@@ -4,6 +4,9 @@ const webpack = require('webpack'),
 	BundleTracker = require('webpack-bundle-tracker'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+	console.log(glob.sync('./build/src/*/!(_)*.*'))
+
+
 module.exports = { 
 	
 	context: __dirname,
