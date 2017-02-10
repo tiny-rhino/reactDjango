@@ -149,3 +149,9 @@ WEBPACK_LOADER = {
         'IGNORE': ['.+\.hot-update.js', '.+\.map']
     }
 }
+
+# React server-side rendering config
+REACT = {
+	'RENDER': not DEBUG,
+	'RENDER_URL': 'http://127.0.0.1:8001/render',
+}
