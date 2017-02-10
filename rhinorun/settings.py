@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'webpack_loader',
     'django_extensions',
     'rest_framework',
+	'react'
 
     # Project apps go here
 ]
