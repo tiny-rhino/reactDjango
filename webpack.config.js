@@ -2,17 +2,14 @@ const webpack = require('webpack'),
 	path = require('path'),
 	glob = require('glob'),
 	BundleTracker = require('webpack-bundle-tracker'),
-	ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-	console.log(glob.sync('./build/src/*/!(_)*.*'))
-
+	ExtractTextPlugin = require('extract-text-webpack-plugin'),
+	utils = require('./build/utils')
 
 module.exports = { 
 	
 	context: __dirname,
 
-	// create an array with paths to build files excluding files beginning with '_'
-	entry: glob.sync('./build/src/*/!(_)*.*'),
+	entry: utils.compileEntry('./build/src/*/!(_)*.*'),
 
 	output: {
 		path: path.join(__dirname, 'rhinorun/static'),
