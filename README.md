@@ -1,4 +1,5 @@
-# Django + Webpack + React boilerplate with Django Webpack Loader configured.
+# Django + Webpack + React boilerplate 
+(w/ Django Webpack Loader configured)
 
 ## Tools
 - Django 1.10
@@ -10,7 +11,7 @@
 - Automatic rendering of build files in Django templates (`{% render_bundle 'main' 'js' %}`)
 - Babel ES2015 + React
 - SCSS loader
-- Extract Text Webpack Plugin for compiling css files
+- Extract Text Webpack Plugin for compiling css files  
 
 
 ## Set up dev env
@@ -34,11 +35,11 @@ Install npm packages
 
 
 ## Front-end dev
-Run webpack watch for hot-rebuilding
+Run webpack watch for hot-rebuilding  
 `npm run dev`
 
-Run webpack minified production build
+Run webpack minified production build  
 `npm run build`
 
-Clean the static dir of old builds
+Clean the static dir of old builds  
 `npm run clean`
