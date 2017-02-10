@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "clean": "rm rhinorun/static/*",
+    "clean": "rm -r rhinorun/static/*",
     "dev": "webpack --watch",
     "build": "webpack -p"
   },
