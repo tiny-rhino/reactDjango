@@ -2,11 +2,8 @@
 {% load render_bundle from webpack_loader %}
 
 {% block head %}
-    {% render_bundle 'main' 'css' %}
 {% endblock %}
 
 {% block content %}
-	<h1>{{ hello }}</h1> 
-	{{ react }}
-{% render_bundle 'main' 'js' %}
+	{{ rendered|safe }}
 {% endblock %}
