@@ -6,13 +6,11 @@ class ReactView(TemplateView):
 	
 	template_name = 'react.html'
 
-	rendered = render_component('js/react.js', {})
-
-	print(rendered)
+	react_component = render_component('js/ReactComponent.js', { 'rendered': 'server' } )
 
 	def get(self, request, *args, **kwargs):			
 		context = {
-					'rendered': self.rendered
+			'react_component': self.react_component
 		}
 
 		return render(request, self.template_name, context)

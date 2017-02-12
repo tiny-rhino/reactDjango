@@ -1,4 +1,5 @@
 Django==1.10.5
 django-webpack-loader==0.4.1
 django-extensions==1.7.6
-react==3.0.1
+react
+requests==2.7.0
