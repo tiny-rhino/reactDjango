@@ -3,7 +3,8 @@
   "scripts": {
     "clean": "rm -r rhinorun/static/*",
     "dev": "cp build/src/js/components/* rhinorun/static/js/ && webpack --watch",
-    "build": "cp build/src/js/components/* rhinorun/static/js/ && webpack -p"
+    "build": "cp build/src/js/components/* rhinorun/static/js/ && webpack -p",
+	"render": "node render_server.js"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
