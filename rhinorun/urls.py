@@ -1,4 +1,4 @@
-"""rhinorun URL Configuration
+""" URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -24,8 +24,9 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-	url(r'^react$', ReactView.as_view(), name='react'),
+    url(r'^react$', ReactView.as_view(), name='react'),
 
     # Serve media for developing
     url(r'^media/(?P<path>.*)$', serve, {
