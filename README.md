@@ -10,9 +10,10 @@
 ## Features
 - Hashed build files (`[name]-[hash].(js|css)`)
 - Automatic rendering of build files in Django templates (`{% render_bundle 'main' 'js' %}`)
+- Server-side rendering for React Components (`<div id='react-component'>{{ component|safe }}</div>`)
 - Babel ES2015 + React
 - SCSS loader
-- Extract Text Webpack Plugin for compiling css files  
+- Compiling to CSS with Extract Text Webpack Plugin
 
 
 ## Set up dev env
