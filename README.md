@@ -2,9 +2,10 @@
 (w/ Django Webpack Loader configured)
 
 ## Tools
-- Django 1.10
-- Webpack 2.2
-- Django Webpack Loader / Bundle Tracker
+- [Django](https://github.com/django/django) 1.10
+- [Webpack](https://github.com/webpack/webpack) 2.2
+- [Django Webpack Loader](https://github.com/owais/django-webpack-loader) (Webpack Bundle Tracker)
+- [Python React](https://github.com/markfinger/python-react) (React server-side rendering)
 
 ## Features
 - Hashed build files (`[name]-[hash].(js|css)`)
@@ -43,3 +44,6 @@ Run webpack minified production build
 
 Clean the static dir of old builds  
 `npm run clean`
+
+Run render server for server-side rendering
+`npm run render`
