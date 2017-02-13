@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     # Third party
     'webpack_loader',
     'django_extensions',
-    'rest_framework',
 	'react'
 
     # Project apps go here
