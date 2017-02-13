@@ -3,6 +3,7 @@ const webpack = require('webpack'),
 	glob = require('glob'),
 	BundleTracker = require('webpack-bundle-tracker'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin'),
+	CopyWebpackPlugin = require('copy-webpack-plugin'),
 	utils = require('./build/utils')
 
 module.exports = { 
@@ -38,7 +39,10 @@ module.exports = {
 
 	plugins: [
 		new BundleTracker({filename: './webpack-stats.json'}),
-		new ExtractTextPlugin('[name]-[hash].css')
+		new ExtractTextPlugin('[name]-[hash].css'),
+		new CopyWebpackPlugin([
+			{ from: './build/src/js/component/*', to: './rhinorun/static/js/'}
+		])
 	],
 
 	resolve: {
