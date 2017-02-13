@@ -11,7 +11,6 @@ class ReactView(TemplateView):
 	}
 
 	react_component = render_component('js/ReactComponent.js', props=props )
-	print(	react_component.markup) 
 
 	def get(self, request, *args, **kwargs):			
 		context = {
