@@ -13,7 +13,7 @@ module.exports = {
     entry: utils.compileEntry('./build/src/*/!(_)*.*'),
 
     output: {
-        path: path.join(__dirname, 'rhinorun/static'),
+        path: path.join(__dirname, 'core/static'),
         filename: '[name]-[hash].js',
         publicPath: '/static/'
     },
@@ -41,7 +41,7 @@ module.exports = {
         new BundleTracker({filename: './webpack-stats.json'}),
         new ExtractTextPlugin('[name]-[hash].css'),
         new CopyWebpackPlugin([
-            { from: './build/src/js/component/*', to: './rhinorun/static/js/'}
+            { from: './build/src/js/component/*', to: './core/static/js/'}
         ])
     ],
 

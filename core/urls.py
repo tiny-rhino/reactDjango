@@ -24,9 +24,7 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
-    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
-    url(r'^react$', ReactView.as_view(), name='react'),
+    url(r'^$', ReactView.as_view(template_name='home.html'), name='home'),
 
     # Serve media for developing
     url(r'^media/(?P<path>.*)$', serve, {
