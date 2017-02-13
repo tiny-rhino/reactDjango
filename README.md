@@ -31,7 +31,7 @@ Run server
 `./manage.py runserver`
 
 ### NPM
-Install npm packages
+Install npm packages  
 `npm i`
 
 
@@ -45,5 +45,5 @@ Run webpack minified production build
 Clean the static dir of old builds  
 `npm run clean`
 
-Run render server for server-side rendering
+Run render server for server-side rendering  
 `npm run render`
