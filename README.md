@@ -1,5 +1,5 @@
 # Django + Webpack + React boilerplate 
-(w/ Django Webpack Loader configured)
+(w/ Django Webpack Loader + Server-side rendering)
 
 ## Tools
 - [Django](https://github.com/django/django) 1.10
