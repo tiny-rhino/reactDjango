@@ -17,10 +17,8 @@
 
 
 ## Set up dev env
-
-### Django
 Create & activate virtual env  
-`virtualenv --python=python3 env && source env/bin/activate`
+`virtualenv env && source env/bin/activate`
 
 Install requirements  
 `pip3 install -r requirements.txt`
@@ -28,12 +26,14 @@ Install requirements
 Apply migrations  
 `./manage.py migrate`
 
-Run server  
-`./manage.py runserver`
-
-### NPM
 Install npm packages  
 `npm i`
+
+Run render server for server-side rendering  
+`npm run render`
+
+Run server  
+`./manage.py runserver`
 
 
 ## Front-end dev
@@ -45,6 +45,3 @@ Run webpack minified production build
 
 Clean the static dir of old builds  
 `npm run clean`
-
-Run render server for server-side rendering  
-`npm run render`
