@@ -4,3 +4,4 @@ env/
 *.pyc
 node_modules
 npm-debug.log
+webpack-stats.json
