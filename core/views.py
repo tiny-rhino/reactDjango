@@ -2,9 +2,9 @@ from django.views.generic import TemplateView
 from django.shortcuts import render 
 from react.render import render_component
 
-class ReactView(TemplateView):
+class HomeView(TemplateView):
     
-    template_name = 'react.html'
+    template_name = 'home.html'
 
     props = {
         'rendered': 'server'

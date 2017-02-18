@@ -17,14 +17,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
-from .views import ReactView
+from .views import HomeView
 
 from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', ReactView.as_view(template_name='home.html'), name='home'),
+    url(r'^$', HomeView.as_view(), name='home'),
 
     # Serve media for developing
     url(r'^media/(?P<path>.*)$', serve, {
