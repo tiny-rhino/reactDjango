@@ -7,5 +7,5 @@
 {% block content %}
     <h3>Django renders the React component on the server with prop `server`. When the client loads it renders the `client` prop:</h3>
     <div id='react-component'>{{ react_component|safe }}</div>
-    {% render_bundle 'js/home' 'js' %}
+    {% render_bundle 'js/App' 'js' %}
 {% endblock %}

@@ -6,4 +6,5 @@ env/
 node_modules
 npm-debug.log
 webpack-stats.json
-core/static/
+core/static/css/
+core/static/js/
