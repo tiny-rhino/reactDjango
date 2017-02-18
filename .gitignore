@@ -1,6 +1,7 @@
 .DS_Store
 db.sqlite3
 env/
+.env
 *.pyc
 node_modules
 npm-debug.log
