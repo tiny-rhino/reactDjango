@@ -41,16 +41,16 @@ module.exports = {
         new BundleTracker({filename: './webpack-stats.json'}),
         new ExtractTextPlugin('[name]-[hash].css'),
         new CopyWebpackPlugin([
-            { from: './build/src/js/component/*', to: './core/static/js/'}
+            { from: './build/src/js/components/*', to: './js/' }
         ])
     ],
 
     resolve: {
         descriptionFiles: ['package.json'],
         extensions: [
-        '.js',
-        '.css', '.scss', '.less',
-        '.json', '.yml'
+            '.js',
+            '.css', '.scss', '.less',
+            '.json', '.yml'
         ],
     }
 }
