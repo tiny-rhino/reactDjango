@@ -38,11 +38,15 @@ module.exports = {
     },
 
     plugins: [
+
         new BundleTracker({filename: './webpack-stats.json'}),
+
         new ExtractTextPlugin('[name]-[hash].css'),
+
         new CopyWebpackPlugin([
-            { from: './build/src/js/components/*', to: './js/' }
+            { from: 'build/src/js/components', to: 'js' }
         ])
+
     ],
 
     resolve: {
