@@ -25,9 +25,4 @@
     "webpack": "^2.2.1",
     "webpack-bundle-tracker": "^0.2.0"
   },
-  "dependencies": {
-    "body-parser": "^1.16.1",
-    "express": "^4.14.1",
-    "react-render": "^1.2.1"
-  }
 }

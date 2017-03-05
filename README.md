@@ -1,16 +1,13 @@
-# Django + Webpack + React boilerplate 
-(w/ Django Webpack Loader + Server-side rendering)
+# reactDjango
 
 ## Tools
 - [Django](https://github.com/django/django) 1.10
 - [Webpack](https://github.com/webpack/webpack) 2.2
 - [Django Webpack Loader](https://github.com/owais/django-webpack-loader) (Webpack Bundle Tracker)
-- [Python React](https://github.com/markfinger/python-react) (React server-side rendering)
 
 ## Features
 - Hashed build files (`[name]-[hash].(js|css)`)
 - Automatic rendering of build files in Django templates (`{% render_bundle 'main' 'js' %}`)
-- Server-side rendering for React Components (`<div id='react-component'>{{ component|safe }}</div>`)
 - Babel ES2015 + React
 - SCSS loader
 - Compiling to CSS with Extract Text Webpack Plugin
@@ -28,9 +25,6 @@ Apply migrations
 
 Install npm packages  
 `npm i`
-
-Run render server for server-side rendering  
-`npm run render`
 
 Run server  
 `./manage.py runserver`

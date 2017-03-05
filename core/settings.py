@@ -41,8 +41,7 @@ INSTALLED_APPS = [
 
     # Third party
     'webpack_loader',
-    'django_extensions',
-	'react'
+    'django_extensions'
 
     # Project apps go here
 ]
@@ -147,9 +146,4 @@ WEBPACK_LOADER = {
         'TIMEOUT': None,
         'IGNORE': ['.+\.hot-update.js', '.+\.map']
     }
-}
-
-# React server-side rendering config
-REACT = {
-	'RENDER_URL': 'http://127.0.0.1:9009/render',
 }
