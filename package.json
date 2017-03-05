@@ -3,8 +3,7 @@
   "scripts": {
     "clean": "rm -r core/static/*",
     "dev": "webpack --watch",
-    "build": "webpack -p",
-    "render": "node render_server.js"
+    "build": "webpack -p"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
