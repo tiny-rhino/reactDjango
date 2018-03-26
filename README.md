@@ -1,12 +1,13 @@
 # reactDjango
+Build your Django-app's front-end in React by just passing your context variables as props to React components!
 
 ## Features
-- Server-side rendering designed to pass view context to React Components as props 
-- JS hot reloading
-- Hashed build files (`[name]-[hash].(js|css)`)
-- `babel-preset-env` with React preset
+- Server-side rendering
+- Configured development and production front-end servers
+- Component hot reloading
+- Hashed build files (`[name]-[hash].js`)
 
-## Set up dev env
+## Get started
 Create & activate virtual env  
 `virtualenv env && source env/bin/activate`
 
@@ -22,9 +23,7 @@ Install node dependancies
 Run dev script
 `yarn dev`
 
-The dev script runs a dev server which will hot reload JS components.
-
-## Running in production
+## Run in production
 Build the statics
 `yarn build`
 
