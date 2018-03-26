@@ -1,30 +1,27 @@
 {
   "private": true,
   "scripts": {
-    "clean": "rm -r core/static/*",
-    "dev": "webpack --watch",
-    "build": "webpack -p"
+    "dev": "NODE_ENV=development node devServer.js & node render-server.js",
+    "build": "NODE_ENV=production webpack --progress",
+    "start": "NODE_ENV=production node render-server.js"
   },
-  "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.26.1",
-    "eslint": "^3.17.0",
-    "extract-text-webpack-plugin": "^2.0.0-rc.2",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
     "glob": "^7.1.1",
-    "node-sass": "^4.5.0",
-    "postcss-cssnext": "^2.9.0",
-    "postcss-loader": "^1.3.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "webpack": "^2.2.1",
-    "webpack-bundle-tracker": "^0.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^4.0.0",
+    "react-render": "^1.2.1",
+    "webpack": "^4.2.0",
+    "webpack-bundle-tracker": "^0.3.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-middleware": "^3.0.1",
+    "webpack-hot-middleware": "^2.21.2"
   }
 }

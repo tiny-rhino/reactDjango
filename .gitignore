@@ -1,10 +1,10 @@
 .DS_Store
 db.sqlite3
-env/
+env
 .env
 *.pyc
 node_modules
 npm-debug.log
 webpack-stats.json
-core/static/css/
-core/static/js/
+core/static/pages
+yarn-error.log

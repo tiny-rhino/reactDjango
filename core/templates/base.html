@@ -1,0 +1,15 @@
+{% load render_bundle from webpack_loader %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <div id="root">{{ component|safe }}</div>
+    <script type='text/javascript'>
+        var props = {{ component.props| safe }}
+    </script>
+    {% render_bundle container 'js' %}
+</body>
+</html>

@@ -1,73 +1,62 @@
-const webpack = require('webpack'),
-    path = require('path'),
-    glob = require('glob'),
-    BundleTracker = require('webpack-bundle-tracker'),
-    postcssCssnext = require('postcss-cssnext')
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
-    CopyWebpackPlugin = require('copy-webpack-plugin'),
-    utils = require('./build/utils')
+const webpack = require("webpack"),
+  path = require("path"),
+  glob = require("glob"),
+  BundleTracker = require("webpack-bundle-tracker"),
+  babelrc = require("./babelrc"),
+  dev = process.env.NODE_ENV === "development";
+
+const entry = () => {
+  let entry = {};
+  const pages = glob.sync("src/containers/*.js");
+  pages.forEach(page => {
+    const fileName = page
+      .split("/")
+      .pop()
+      .split(".")[0];
+    entry = {
+      ...entry,
+      [fileName]: [
+        ...(dev ? ["react-hot-loader/patch"] : []),
+        path.resolve(page),
+        ...(dev
+          ? [
+              "webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr"
+            ]
+          : [])
+      ]
+    };
+  });
+  return entry;
+};
 
 module.exports = {
-
-    context: __dirname,
-
-    entry: utils.compileEntry('./build/src/*/!(_)*.*'),
-
-    output: {
-        path: path.join(__dirname, 'core/static'),
-        filename: '[name]-[hash].js',
-        publicPath: '/static/'
-    },
-
-    module: {
-        rules: [
-        {
-            test: /\.js$/,
-            use: [{
-                loader: 'babel-loader',
-                options: { presets: ['es2015', 'react', 'stage-0'] }
-            }],
+  mode: dev ? "development" : "production",
+  devtool: dev ? "eval" : "source-map",
+  entry,
+  output: {
+    path: path.resolve("./core/static/pages/"),
+    filename: dev ? "[name].js" : "[name]-[hash].js",
+    publicPath: dev ? "http://localhost:9000/" : "/static/pages/"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js/,
+        use: {
+          loader: "babel-loader",
+          options: babelrc
         },
-        {
-            test: /\.scss$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [
-                    'css-loader', 
-                    'sass-loader',
-                    { 
-                        loader: 'postcss-loader', 
-                        options: { 
-                            plugins: () => [
-                              postcssCssnext({
-                                browsers: ['last 2 versions', 'ie >= 9'],
-                                compress: true,
-                              })
-                          ]
-                        }
-                    }
-                ]
-                })
-        },
-        ],
-    },
-
-    plugins: [
-
-        new BundleTracker({filename: './webpack-stats.json'}),
-        new ExtractTextPlugin('[name]-[hash].css'),
-        new CopyWebpackPlugin([
-            { from: 'build/src/js/components', to: 'js' }
-        ])
-
-    ],
-
-    resolve: {
-        descriptionFiles: ['package.json'],
-        extensions: [
-            '.js',
-            '.css', '.scss', '.less',
-            '.json', '.yml'
-        ],
-    }
-}
+        exclude: "/node_modules/"
+      }
+    ]
+  },
+  plugins: [
+    new BundleTracker({ filename: "./webpack-stats.json" }),
+    ...(dev
+      ? [
+          new webpack.NamedModulesPlugin(),
+          new webpack.HotModuleReplacementPlugin()
+        ]
+      : [])
+  ]
+};

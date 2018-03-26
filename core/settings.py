@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.join(BASE_DIR, '..')
+PROJECT_ROOT = BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third party
+    'django_extensions',
     'webpack_loader',
-    'django_extensions'
+    'react',
 
     # Project apps go here
 ]
@@ -136,11 +137,16 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
 
 MEDIA_URL = '/media/'
 
+REACT = {
+    'RENDER': not DEBUG,
+    'RENDER_URL': 'http://127.0.0.1:8001/render',
+}
+
 # Webpack config
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
-        'BUNDLE_DIR_NAME': 'web/static/', # must end with slash
+        'BUNDLE_DIR_NAME': 'core/out/',
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
         'POLL_INTERVAL': 0.1,
         'TIMEOUT': None,
