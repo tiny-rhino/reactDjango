@@ -1,7 +1,7 @@
 # reactDjango
 
 ## Features
-- Automatic rendering of static file paths in Django templates (`{% render_bundle 'main' 'js' %}`)
+- Server-side rendering designed to pass view context to React Components as props 
 - JS hot reloading
 - Hashed build files (`[name]-[hash].(js|css)`)
 - `babel-preset-env` with React preset
