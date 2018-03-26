@@ -1,41 +1,32 @@
 # reactDjango
 
-## Tools
-- [Django](https://github.com/django/django) 1.10
-- [Webpack](https://github.com/webpack/webpack) 2.2
-- [Django Webpack Loader](https://github.com/owais/django-webpack-loader) (Webpack Bundle Tracker)
-
 ## Features
+- Automatic rendering of static file paths in Django templates (`{% render_bundle 'main' 'js' %}`)
+- JS hot reloading
 - Hashed build files (`[name]-[hash].(js|css)`)
-- Automatic rendering of build files in Django templates (`{% render_bundle 'main' 'js' %}`)
-- Babel ES2015 + React
-- SCSS loader
-- Compiling to CSS with Extract Text Webpack Plugin
-
+- `babel-preset-env` with React preset
 
 ## Set up dev env
 Create & activate virtual env  
 `virtualenv env && source env/bin/activate`
 
 Install requirements  
-`pip3 install -r requirements.txt`
+`pip install -r requirements.txt`
 
 Apply migrations  
 `./manage.py migrate`
 
-Install npm packages  
-`npm i`
+Install node dependancies
+`yarn`
 
-Run server  
-`./manage.py runserver`
+Run dev script
+`yarn dev`
 
+The dev script runs a dev server which will hot reload JS components.
 
-## Front-end dev
-Run webpack watch for hot-rebuilding  
-`npm run dev`
+## Running in production
+Build the statics
+`yarn build`
 
-Run webpack minified production build  
-`npm run build`
-
-Clean the static dir of old builds  
-`npm run clean`
+Run python server & static rendering server
+`./manage.py runserver && yarn start`
